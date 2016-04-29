@@ -1,0 +1,9 @@
+{% flash %}
+	{% put scripts %}
+	<script>
+		jQuery(document).ready(function($) {			
+			toastr.{{type}}('{{ message }}', 'Сообщение системы');    
+		});
+	</script>
+	{% endput %}
+{% endflash %}
