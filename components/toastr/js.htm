@@ -6,7 +6,9 @@
             "progressBar": {{ toastr.progressBar ? 'true' : 'false' }},
             "positionClass": "{{ toastr.positionClass }}",
             "preventDuplicates": {{ toastr.preventDuplicates ? 'true' : 'false' }},
+            {% if toastr.onclick %}
             "onclick": {{ toastr.onclick|raw }},
+            {% endif %}
             "showDuration": "{{ toastr.showDuration }}",
             "hideDuration": "{{ toastr.hideDuration }}",
             "timeOut": "{{ toastr.timeOut }}",
