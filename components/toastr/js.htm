@@ -22,7 +22,9 @@
             event.preventDefault();
         });
         {% endif %}
-        {% if flash and toastr.handleFlashMessages %}
+        {% if toastr.handleAjaxFlashMessages %}
+        {% flash %}
         toastr.{{ type }}('{{ message }}', '{{ toastr.messageHeader }}');
+        {% endflash %}
         {% endif %}
     });

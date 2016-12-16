@@ -107,7 +107,7 @@ class Toastr extends ComponentBase
             ],
             'onclick' => [
                 'title' => 'Handle click to message',
-                'default' => 'console.log("Ok, toastr work!")'
+                'default' => ''
             ],
 
         ];
