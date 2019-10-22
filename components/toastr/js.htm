@@ -29,4 +29,31 @@
         toastr.{{ type }}('{{ message }}', '{{ toastr.messageHeader }}');
         {% endflash %}
         {% endif %}
+
+        $(window).on('ajaxConfirmMessage', function (event, message) {
+            // Stop the default confirm dialog
+            event.preventDefault();
+
+            message += `<div class="toast-buttons"><button id="toastOK">OK</button><button id="toastCancel">Cancel</button></div>`;
+           
+            toastr.info(message, '{{ toastr.messageHeader }}');
+
+            // Okay Button
+            $('#toastOK').click(function (e) {
+                e.preventDefault();
+                toastr.clear();
+                event.promise.resolve();
+            });
+
+            // Cancel Button
+            $('#toastCancel').click(function (e) {
+                e.preventDefault();
+                event.promise.reject();
+            });
+
+            // Return a value so the framework knows we're handling the confirm
+             return true;
+        });
+
     });
+
