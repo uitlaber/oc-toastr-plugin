@@ -35,8 +35,8 @@
             event.preventDefault();
 
             message += `<div class="toast-buttons"><button id="toastOK">OK</button><button id="toastCancel">Cancel</button></div>`;
-           
-            toastr.info(message, '{{ toastr.messageHeader }}');
+
+            toastr.{{toastr.confirmStyle}}(message, '{{ toastr.messageHeader }}');
 
             // Okay Button
             $('#toastOK').click(function (e) {

@@ -109,6 +109,12 @@ class Toastr extends ComponentBase
                 'title' => 'Handle click to message',
                 'default' => ''
             ],
+            'confirmStyle' => [
+                'title' => 'Confirm dialog style color',
+                'type' => 'dropdown',
+                'default' => 'info',
+                'options' => ['warning' => 'Orange', 'info' => 'Blue', 'success' => 'Green', 'error' => 'Red']
+            ],
 
         ];
     }
@@ -134,7 +140,9 @@ class Toastr extends ComponentBase
             'handleAjaxFlashMessages' => $this->property('handleAjaxFlashMessages'),
             'onclick' => $this->property('onclick'),
             'messageHeader' => $this->property('messageHeader'),
+            'confirmStyle' => $this->property('confirmStyle'),
         ];
+
         $this->addCss('/plugins/uit/toastr/assets/css/toastr.css');
         $this->addJs('/plugins/uit/toastr/assets/js/toastr.js');
         Block::put('scripts');
