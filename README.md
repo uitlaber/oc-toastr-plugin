@@ -1,5 +1,5 @@
 # oc-toastr-plugin
-Плагин для красивого вывода системных ошибок используется toastr.js
+Плагин для красивого вывода уведомления toastr.js
 Пример: http://codeseven.github.io/toastr/demo.html
 
 ##Установка
