@@ -30,6 +30,14 @@
         {% endflash %}
         {% endif %}
 
+        $(window).on('ajaxComplete', function (context, data, textStatus, jqXHR) {
+            if (textStatus.responseJSON['X_OCTOBER_FLASH_MESSAGES']) {
+                $.each(textStatus.responseJSON['X_OCTOBER_FLASH_MESSAGES'], function(type, message) {
+                    toastr[type](message, '{{ toastr.messageHeader }}');
+                })
+            }
+        });
+
         $(window).on('ajaxConfirmMessage', function (event, message) {
             // Stop the default confirm dialog
             event.preventDefault();
